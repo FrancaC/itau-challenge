@@ -6,6 +6,8 @@ import com.example.itauchallenge.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ClientService {
     @Autowired
@@ -20,7 +22,9 @@ public class ClientService {
 
         clientRepository.save(client);
     }
-
+    public List<Client> ListAllClients(){
+        clientRepository.findAll();
+    }
 
 
 }
