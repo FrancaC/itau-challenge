@@ -4,7 +4,6 @@ import com.example.itauchallenge.entity.Client;
 import com.example.itauchallenge.entity.clientdto.ClientDTO;
 import com.example.itauchallenge.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,7 +13,7 @@ import java.util.List;
 @RequestMapping("/client")
 public class ClientController {
     @Autowired
-    private ClientService clientService = new ClientService();
+    private ClientService clientService ;
 
     @PostMapping("/save")
     public ResponseEntity<Client> saveClient(@RequestBody ClientDTO clientDTO){

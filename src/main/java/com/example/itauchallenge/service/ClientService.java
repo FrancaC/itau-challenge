@@ -14,7 +14,7 @@ public class ClientService {
     private ClientRepository clientRepository;
 
 
-    private Client saveClient(ClientDTO clientDTO){
+    public Client saveClient(ClientDTO clientDTO){
         Client client = new Client();
         client.setFirstName(clientDTO.firstName());
         client.setLastName(clientDTO.lastName());
