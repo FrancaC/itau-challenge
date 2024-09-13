@@ -14,16 +14,15 @@ public class ClientService {
     private ClientRepository clientRepository;
 
 
-    public Client saveClient(ClientDTO clientDTO){
+    private Client saveClient(ClientDTO clientDTO){
         Client client = new Client();
         client.setFirstName(clientDTO.firstName());
         client.setLastName(clientDTO.lastName());
         client.setParticipation(clientDTO.participation());
-
-        clientRepository.save(client);
+        return clientRepository.save(client);
     }
     public List<Client> ListAllClients(){
-        clientRepository.findAll();
+       return clientRepository.findAll();
     }
 
 

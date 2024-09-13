@@ -8,9 +8,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.math.BigDecimal;
-@Entity
-@Getter
 @Setter
+@Getter
+@Entity
 public class Client {
 
     @Id
@@ -30,5 +30,27 @@ public class Client {
     public Client() {
     }
 
+    public String getFirstName() {
+        return firstName;
+    }
 
+    public String getLastName() {
+        return lastName;
+    }
+
+    public BigDecimal getParticipation() {
+        return participation;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setParticipation(BigDecimal participation) {
+        this.participation = participation;
+    }
 }
