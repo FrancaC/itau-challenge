@@ -14,11 +14,17 @@ public class ClientService {
     private ClientRepository clientRepository;
 
 
-    private Client saveClient(ClientDTO clientDTO){
+    public Client saveClient(ClientDTO clientDTO){
         Client client = new Client();
         client.setFirstName(clientDTO.firstName());
         client.setLastName(clientDTO.lastName());
         client.setParticipation(clientDTO.participation());
+
+        if (client.getFirstName().isEmpty()||
+            client.getLastName().isEmpty() ||
+            client.getParticipation() == null)
+                throw  new NullPointerException();
+
         return clientRepository.save(client);
     }
     public List<Client> ListAllClients(){
